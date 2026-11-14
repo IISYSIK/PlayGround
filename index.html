@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#101619">
+<title>LAST AMONG US — Tactical Round</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="game">
+  <canvas id="scene" aria-label="3D tactical game"></canvas>
+  <div class="grain"></div>
+  <header class="topbar"><div class="brand"><span class="brand-mark">◈</span><div><b>LAST AMONG US</b><small>VERTIGO FACILITY · LIVE OPERATION</small></div></div><div class="round-pill"><i></i> ROUND 01 <span>·</span> <b id="clock">02:00</b></div><button id="soundBtn" class="icon-btn" aria-label="Toggle sound">♫</button></header>
+  <aside class="left-rail"><div class="rail-title">SQUAD STATUS <span id="aliveCount">06 ALIVE</span></div><div id="roster" class="roster"></div><div class="feed-wrap"><div class="rail-title">COMMS FEED</div><div id="feed" class="feed"></div></div></aside>
+  <section class="mission-card"><div class="eyebrow"><span class="live-dot"></span> FIELD ORDERS</div><div class="mission-head"><h1 id="roleTitle">SECURE THE SITE</h1><span id="roleTag" class="tag">CREW</span></div><p id="missionCopy">Complete your assigned tasks. Keep your eyes open.</p><div class="progress-line"><div id="taskBar"></div></div><div class="progress-meta"><span>OBJECTIVES COMPLETE</span><b id="taskCount">0 / 3</b></div><div id="taskList" class="task-list"></div></section>
+  <div class="right-stack"><div class="map-card"><div class="map-label">TACTICAL MAP <span>● LIVE</span></div><canvas id="minimap" width="180" height="180"></canvas><div class="map-legend"><span><i class="dot you"></i> YOU</span><span><i class="dot crew"></i> CREW</span><span><i class="dot threat"></i> THREAT</span></div></div><div class="intel-card"><div class="eyebrow">ROUND INTEL</div><div class="intel-row"><span>ELIMINATIONS</span><b id="killCount">00</b></div><div class="intel-row"><span>REPORTS</span><b id="reportCount">00</b></div><div class="intel-row"><span>THREAT LEVEL</span><b class="threat-text">UNKNOWN</b></div></div></div>
+  <div class="center-notice" id="notice"></div>
+  <div class="interaction" id="interaction"><span class="keycap">E</span><span id="interactionText">INTERACT</span></div>
+  <div class="action-hud"><div class="cooldown" id="cooldown"><div class="cooldown-ring"></div><span>READY</span></div><div class="controls-hint" id="controlHint">WASD MOVE <i>·</i> E INTERACT <i>·</i> Q MEETING</div></div>
+  <div class="bottom-left"><span class="signal-bars">▂ ▄ ▆</span> SECURE CHANNEL <b>ENCRYPTED</b></div>
+  <div class="mobile-controls"><div class="dpad"><button data-dir="up">▲</button><div><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div></div><div class="mobile-actions"><button id="touchInteract">INTERACT</button><button id="touchAction">ACTION</button></div></div>
+  <div id="overlay" class="overlay"><div class="start-panel"><div class="overline"><span></span> COUNTER-INTEL DIVISION · 2025</div><div class="hero-title">TRUST<br><em>NO ONE.</em></div><p class="hero-copy">A tactical strike. An enemy among you.<br>Complete the mission—or make sure no one does.</p><div class="mode-card"><div class="mode-icon">✳</div><div><b>VERTIGO FACILITY</b><small>6 OPERATIVES · 1 IMPOSTOR · 2:00 ROUND</small></div><span class="mode-status">READY</span></div><div class="briefing"><span>YOUR BRIEFING</span><p id="briefingText">Your role is classified until deployment.</p></div><button id="startBtn" class="deploy-btn">DEPLOY TO ROUND <span>→</span></button><div class="start-controls">WASD <span>MOVE</span> &nbsp; E <span>INTERACT</span> &nbsp; Q <span>CALL MEETING</span></div></div></div>
+  <div id="meeting" class="meeting hidden"><div class="meeting-inner"><div class="meeting-kicker">EMERGENCY COMMS · <span id="meetingReason">BODY REPORTED</span></div><h2>WHO IS THE <em>IMPOSTOR?</em></h2><p>Discuss. Observe. Cast your vote before the signal expires.</p><div id="candidates" class="candidates"></div><div class="meeting-footer"><span id="voteStatus">VOTE TO EJECT · SKIP IS ALLOWED</span><b id="meetingTimer">15</b></div></div></div>
+  <div id="endScreen" class="overlay hidden"><div class="start-panel end-panel"><div class="overline">OPERATION DEBRIEF</div><div id="endTitle" class="hero-title">MISSION<br><em>COMPLETE.</em></div><p id="endCopy" class="hero-copy"></p><button id="againBtn" class="deploy-btn">RUN IT BACK <span>↻</span></button></div></div>
+  <div class="vignette"></div>
+</main>
+<script type="module" src="js/game.js"></script>
+</body></html>
